@@ -1,8 +1,9 @@
 const fs = require("fs");
 const jewelsDir = [];
+
 //Get the names of the child folders in a directory
-function getChildNames(parentName) {
-  fs.readdir(parentName, (err, files) => {
+function getChildNames(parentPath) {
+  fs.readdir(parentPath, (err, files) => {
     if (err) {
       console.log(err);
     } else {
