@@ -8,7 +8,7 @@ function getChildNames(parentPath) {
       console.log(err);
     } else {
       files.forEach((file) => {
-        jewelsDir.push(file.toString());
+        jewelsDir.push({ name: file });
       });
     }
   });

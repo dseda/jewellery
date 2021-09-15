@@ -29,6 +29,14 @@ app.get("/jewelleries", async (req, res) => {
   res.render("jewelleries", { jewelleries });
 });
 
-app.listen(3000, () => {
-  console.log("Serving on port 3000");
+app.get("/jewelleries/:id", async (req, res) => {
+  const jewellery = await Jewellery.findById(req.params.id);
+  res.render("jewellery", { jewellery });
+});
+app.get("/search", (req, res) => {
+  res.render("search");
+});
+
+app.listen(3011, () => {
+  console.log("Serving on port 3011");
 });

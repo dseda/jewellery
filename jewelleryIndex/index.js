@@ -28,7 +28,7 @@ const jewelleryDB = async () => {
       description: jewelleries[i].description,
       category: categories[random3],
       color: colors[random2],
-      stone: jewels[random1],
+      stone: jewels[random1].name,
     });
     await j.save();
   }
