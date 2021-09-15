@@ -1,6 +1,6 @@
 const Jewellery = require("../models/jewellery");
-const jewelleries = require("./jewellery");
-const jewels = require("./jewels");
+const jewelleries = require("./jewelleries");
+const jewels = require("./jewelsHelper");
 const colors = require("./colors");
 const categories = require("./categories");
 
@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect("mongodb://localhost:27017/jewellery")
   .then(() => {
-    console.log("connection open");
+    console.log("Database conn open");
   })
   .catch((err) => {
     console.log("Error " + err);
@@ -33,4 +33,7 @@ const jewelleryDB = async () => {
     await j.save();
   }
 };
-jewelleryDB();
+jewelleryDB().then(() => {
+  mongoose.connection.close();
+  console.log("Database conn close");
+});
