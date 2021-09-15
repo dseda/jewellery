@@ -1,0 +1,15 @@
+module.exports = [
+  "white",
+  "green",
+  "red",
+  "black",
+  "orange",
+  "blue",
+  "gold",
+  "silver",
+  "pink",
+  "purple",
+  "mixed",
+  "cream",
+  "brown",
+];
